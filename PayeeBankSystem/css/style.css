@@ -1,0 +1,238 @@
+body{
+    background-color: #1d3b6f;
+    color: #fff;
+}
+
+.header img{
+    padding:20px 0px 20px 10px;
+}
+
+.navbar{
+    border-radius: 0;
+}
+
+#customerNav, #employeeNav, .customerLogin, .employeeLogin{
+    display: none;
+}
+
+.customerInput, .employeeInput, #ClearLocalStorage{
+    cursor: pointer;
+}
+
+.EmployeePage, .CustomerPage{
+    display: none;
+}
+
+.receipt {
+    height: 90px;
+    background: rgb(50, 157, 177);
+    display: none;
+    padding: 0 0 0 20px;
+}
+
+#ReceiptNameReplace{
+    font-size: 20px;
+    position: relative;
+    top: 15px;
+    text-align: left;
+}
+
+#ReceiptAmount{
+    font-size: 20px;
+    position: relative;
+    top: 20px;
+    text-align: left;
+}
+
+.bs-example{
+    color: black;
+}
+
+.messageClass{
+    border: solid 1px white;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+.one-edge-shadow {
+    -webkit-box-shadow: 0 8px 6px -6px black;
+    -moz-box-shadow: 0 8px 6px -6px black;
+    box-shadow: 0 8px 6px -6px black;
+}
+
+.margintop25{
+    margin-top: 25px;
+}
+
+.marginbottom50{
+    margin-bottom: 50px;
+}
+
+.padding10{
+    padding: 5px;
+}
+
+.moneyImg{
+    width: 70px;
+    position: absolute;
+    top: 0;
+    right: 90px;
+    display: none;
+}
+.moneyImg2{
+    width: 70px;
+    position: absolute;
+    bottom: 3px;
+    right: 90px;
+    display: none;
+}
+
+.marginbottom40{
+    margin-bottom: 40px;
+}
+
+.marginbottom30{
+    margin-bottom: 30px;
+}
+
+/*.custom-row{
+    width: 600px;
+    margin: 100px auto;
+}*/
+
+.navbar-default .navbar-nav>li>a:hover{
+    background-color: rgb(50, 157, 177);
+    color: white;
+}
+
+.facebook{
+    height: 40px;
+    width: 40px;
+    background-image: url(../img/social.png);
+    float: left;
+    left: 10px;
+    position: relative;
+    border-radius: 20%;
+}
+.twitter{
+    height: 40px;
+    width: 40px;
+    background: url('../img/social.png') -51px 0px;
+    float: left;
+    left: 20px;
+    position: relative;
+    border-radius: 20%;
+}
+.linkedin{
+    height: 40px;
+    width: 40px;
+    background: url('../img/social.png') -101px 0px;
+    float: left;
+    left: 30px;
+    position: relative;
+    border-radius: 20%;
+}
+
+.EditInformationInputs{
+    display: none;
+}
+
+.Modalpopup{
+    cursor: pointer;
+}
+
+#LblName{
+    margin-left: 15px;
+    display: inline-block;
+}
+
+#HomePageAll{
+    display: block;
+}
+
+.modal-content{
+    color: #000;
+}
+
+.modal-body{
+    height: 600px;
+    overflow: scroll;
+}
+
+.CustomHeight{
+    min-height: 35px;
+}
+
+#footer{
+    text-align: right;
+}
+thead{
+    color: #fff;
+}
+h2, h3, h5{
+    color: #fff;
+}
+h3{
+    border-bottom: solid 1px white;
+padding-bottom: 10px;
+}
+
+.black{
+    color: #000;
+}
+
+#chartContainer, #chartContainerGender{
+    text-align: center;
+}
+.text-muted{
+    position: relative;
+    top: 11px;
+    right: 15px;
+}
+
+a.text-muted:hover{
+    cursor: pointer;
+}
+
+#Log-Off{
+    display:none;
+}
+
+.containerCustom{
+    width: 100%!important;
+}
+
+@media (min-width: 1200px){
+    .container {
+        width: 960px;
+    }
+}
+
+@media (max-width: 510px){
+    .header img {
+        padding: 20px 0px 20px 15px;
+    }
+    .btn-group{
+        padding: 0px 0px 10px 0px;
+        float: none!important;
+    }
+    .CustomCenter{
+        text-align: center;
+    }
+
+/*    .dropdown-menu{
+        margin: -14px 0px 0;
+    }*/
+    #LblName{
+        display: block;
+    }   
+    #Log-Off{
+        float:none!Important;
+        margin: 20px 0;
+    }
+    
+    .dropdown-menu{
+        margin: 2px 0 0 -80px;
+        left: 50% !important;
+    }
+}

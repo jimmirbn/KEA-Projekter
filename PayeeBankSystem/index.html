@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Payeee Bank</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/style.css"/>
+    </head>
+    <body>
+
+        <header class="header one-edge-shadow">
+            <div class="container">
+                <div class="CustomCenter">
+                    <a href="#" class="MyLink" id="LogoLink" data-link="HomePage"><img src="img/logo-final.png" alt="Payeee Logo"/></a>
+                    <div id="LblName"></div>
+                    <div id="BtnDropdown" class="btn-group pull-right">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            Log-on
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li class="customerInput"><a onclick="ChangeOne();" href="#">Customer Login</a></li>
+                            <li class="employeeInput"><a onclick="ChangeTwo();" href="#">Employee Login</a></li>
+                            <li id="ClearLocalStorage"><a href="#">Clear LocalStorage</a></li>
+                        </ul>
+                    </div>
+                    <button id="Log-Off" class="btn btn-danger pull-right">Log-Off</button>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <nav id="customerNav" class="navbar navbar-default" role="navigation">
+                <div class="container">
+                    <!--Brand and toggle get grouped for better mobile display--> 
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <!--Collect the nav links, forms, and other content for toggling--> 
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li class="MyLink" data-link="CustomerPageProfile"><a href="#">My Profile</a></li>
+                            <li class="MyLink" data-link="CustomerPageTrans"><a href="#">Transactions</a></li>
+                            <li class="MyLink" data-link="CustomerPageTransfer"><a href="#">Transfer Money</a></li>
+                            <li class="MyLink" data-link="CustomerPageAsk"><a href="#">Ask Employee</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <nav id="employeeNav" class="navbar navbar-default" role="navigation">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="MyLink" data-link="EmployeePageTrans"><a href="#">Pending Transactions</a></li>
+                            <li class="MyLink" data-link="EmployeePageAddEmployee"><a href="#">Add employee</a></li>
+                            <li class="MyLink" data-link="EmployeePageAddCustomer"><a href="#">Add Customer</a></li>
+                            <li class="MyLink" data-link="EmployeePageTransfer"><a href="#">Transfer money</a></li>
+                            <li class="MyLink" data-link="EmployeePageStatistics"><a href="#">Customer statistics</a></li>
+                            <li class="MyLink" data-link="EmployeePageAsk"><a href="#">Messages from Customers</a></li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div>
+            </nav>
+        </header>
+        <div class="container marginbottom50">
+
+            <!--HEADER END!------------------------------------------------------------------------->
+
+            <!--LOGIN SECTION!------------------------------------------------------------------------->
+
+            <section>
+                <div class="customerLogin">
+                    <!--<div class="alert alert-success">Customer Login</div>-->
+                    <div class="row margintop25">
+                        <h4 class="text-center marginbottom40">Customer Login</h4>
+                        <div class="col-md-12">
+                            <div class="toggle input-group input-group-lg">
+                                <span class="input-group-addon">@</span>
+                                <input id="TxtLoginNameCustomer" type="text" class="form-control" placeholder="Username" value="Peter">
+                            </div>
+
+                            <div class="row">&nbsp;</div>
+                            <div class="toggle input-group input-group-lg">
+                                <input id="TxtLoginPassCustomer" type="password" class="form-control" placeholder="Password" value="123">
+                                <span class="input-group-btn">
+                                    <button id="CustomerLoginBtn" class="btn btn-success" type="button">Login</button>
+                                </span>
+                            </div><!-- /input-group -->
+                        </div>
+                    </div>
+                </div>
+                <!----------------------->
+
+                <div class="employeeLogin">
+                    <!--<div class="alert alert-success">Employee Login</div>-->
+                    <div class="row margintop25">
+                        <h4 class="text-center marginbottom40">Employee Login</h4>
+                        <div class="col-md-12">
+                            <div class="toggle input-group input-group-lg">
+                                <span class="input-group-addon">@</span>
+                                <input id="TxtLoginNameEmployee" type="text" class="form-control" placeholder="Username" value="Admin">
+                            </div>
+                            <div class="row">&nbsp;</div>
+                            <div class="toggle input-group input-group-lg">
+                                <input id="TxtLoginPassEmployee" type="password" class="form-control" placeholder="Password" value="pass">
+                                <span class="input-group-btn">
+                                    <button id="EmployeeLoginBtn" class="btn btn-success" type="button">Login</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--END LOGIN SECTION!------------------------------------------------------------------------->
+
+            <!--CUSTOMER SECTION!---------------------------------------------------------->
+            <section class="text-center CustomerPage" id="HomePageAll" data-page="HomePage">
+                <h1>Welcome to</h1>
+                <img class="marginbottom30" src="img/logo-final.png" alt="Payee Logo">
+                <div class="bs-example">
+                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-example-generic" data-slide-to="0" class=""></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="item next left">
+                                <img alt="First slide" src="img/img3.jpg">
+                            </div>
+                            <div class="item">
+                                <img alt="Second slide" src="img/img2.jpg">
+                            </div>
+                            <div class="item active left">
+                                <img alt="Third slide" src="img/img1.jpg">
+                            </div>
+                        </div>
+                        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                            <!--<span class="glyphicon glyphicon-chevron-left"></span>-->
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                            <!--<span class="glyphicon glyphicon-chevron-right"></span>-->
+                        </a>
+                    </div>
+                </div>
+
+                <button class="margintop25 btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                    Employee and Customer Logins
+                </button>
+            </section>
+            <section class="CustomerPage" id="CustomerPageProfile" data-page="CustomerPageProfile">
+                <h3>PROFILE</h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Bank Account</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Phone</th>
+                            <th>Cpr</th>
+                            <th>Gender</th>
+                            <th>$ Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody id="TableRowsUser">
+                    </tbody>
+                </table>
+                <button id="editInformation" class="btn btn-warning">Edit Information</button>
+                <div class="row">&nbsp;</div>
+                <div class="EditInformationInputs">
+                    <input id="EditFirstname" type="text" class="form-control" placeholder="New Name">
+                    <div class="row">&nbsp;</div>
+                    <input id="EditLastname" type="text" class="form-control" placeholder="New Lastname">
+                    <div class="row">&nbsp;</div>
+                    <input id="EditPhone" type="text" class="form-control" placeholder="New Phone Nr">
+                    <div class="row">&nbsp;</div>
+                    <input id="EditPass" type="text" class="form-control" placeholder="New Pass">
+                    <div class="row">&nbsp;</div>
+                    <button id="SaveInformation" class="btn btn-success">Save information</button>
+                </div>
+            </section>
+
+            <section class="CustomerPage" id="CustomerPageTrans" data-page="CustomerPageTrans">
+                <h3>TRANSACTIONS!</h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>To</th>
+                            <th>$ Amount</th>
+                            <th>Pending</th>
+                        </tr>
+                    </thead>
+                    <tbody id="TableRowsTransactions">
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="CustomerPage" id="CustomerPageAsk" data-page="CustomerPageAsk">
+                <h3>Ask Employee!</h3>
+                <form>
+                    <input id="AskFirstName" type="text" class="form-control" placeholder="Name">
+                    <div class="row">&nbsp;</div>
+                    <textarea class="form-control" id="AskMessage" rows="3">Please give me some money</textarea>
+                    <div class="row">&nbsp;</div>
+                    <button id="AskSend" type="button" class="btn btn-success">Send</button>
+                </form>
+            </section>
+
+            <section class="CustomerPage" id="CustomerPageTransfer" data-page="CustomerPageTransfer">
+                <h3>TRANSFER MONEY!</h3>
+                <div class="col-md-6">
+                    <div>
+                        <select id="SearchInput" class="form-control">
+                        </select>
+                    </div>
+                    <div class="row">&nbsp;</div>
+                    <div>
+                        <form onsubmit="return false">
+                            <input id="AmountNumber" class="form-control" type="text" value="" placeholder="Amount"/>
+                            <div class="row">&nbsp;</div>
+                            <button id="Transfer" class="btn btn-success">TRANSFER</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div id="PaperReceipt" class="receipt">
+                        <div id="ReceiptNameReplace"></div>
+                        <div id="ReceiptAmount"></div>
+                        <img class="moneyImg" src="img/money.png" alt="Money">
+                    </div>
+                </div>
+            </section>
+
+            <!--END CUSTOMER SECTION!---------------------------------------------------------->
+
+            <!--EMPLOYEE SECTION!--------------------------------------------------------->
+
+            <section class="EmployeePage" id="EmployeePageTrans" data-page="EmployeePageTrans">
+                <h3>PENDING TRANSACTIONS!</h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>From</th>
+                            <th>To</th>
+                            <th>$ Amount</th>
+                            <th>Is Pending</th>
+                        </tr>
+                    </thead>
+                    <tbody id="TableRowsPending">
+                    </tbody>
+                </table>
+
+                <button id="AnswerPending" class="btn btn-success">Accept transfer</button>
+            </section>
+
+            <section class="EmployeePage" id="EmployeePageAddEmployee" data-page="EmployeePageAddEmployee">
+                <h3>ADD EMPLOYEE!</h3>
+                <form>
+                    <input id="TxtFirstName" type="text" class="form-control" placeholder="Employee Name" value="john">
+                    <div class="row">&nbsp</div>
+                    <input id="TxtPass" type="text" class="form-control" placeholder="Employee Pass" value="123">
+                    <div class="row">&nbsp</div>
+                    <button id="BtnSaveToStorage" type="button" class="btn btn-success">SAVE IT!</button>
+                </form>
+            </section>
+
+            <section class="EmployeePage" id="EmployeePageAddCustomer" data-page="EmployeePageAddCustomer">
+                <h3>ADD CUSTOMER</h3>
+                <form>
+                    <input id="TxtCustomerName" type="text" class="form-control" placeholder="Employee Name">
+                    <div class="row">&nbsp</div>
+                    <input id="TxtCustomerLastName" type="text" class="form-control" placeholder="Employee Lastname">
+                    <div class="row">&nbsp</div>
+                    <input id="TxtCustomerBA" type="text" class="form-control" placeholder="Bank Account Nr">
+                    <div class="row">&nbsp</div>
+                    <input id="TxtCustomerCpr" type="text" class="form-control" placeholder="Employee Cpr">
+                    <div class="row">&nbsp</div>
+                    <input id="TxtCustomerPhone" type="text" class="form-control" placeholder="Employee PhoneNr">
+                    <div class="row">&nbsp</div>
+                    <input id="TxtCustomerAmount" type="text" class="form-control" placeholder="Employee Amount">
+                    <div class="row">&nbsp</div>
+                    <select class="form-control" id="TxtCustomerGender"> <option>male</option><option>female</option></select>
+                    <div class="row">&nbsp</div>
+                    <input id="TxtCustomerPass" type="text" class="form-control" placeholder="Employee Pass">
+                    <div class="row">&nbsp</div>
+                    <button id="BtnSaveCustomer" type="button" class="btn btn-success">Save Customer</button>
+                </form>
+            </section>
+
+            <section class="EmployeePage" id="EmployeePageTransfer" data-page="EmployeePageTransfer">
+                <div class="row">
+                    <h3>TRANSFER MONEY BETWEEN CUSTOMERS!</h3>
+                    <div class="col-md-6">
+                        <div>
+                            <select id="SearchInputCustomerOne" class="form-control">
+                            </select>
+                        </div>
+                        <div class="row">&nbsp;</div>
+                        <div>
+                            <form onsubmit="return false">
+                                <input id="CustomerAmountNumber" class="form-control" type="text" value="" placeholder="Amount"/>
+                                <div class="row">&nbsp;</div>
+                                <button id="TransferBetweenCustomers" class="btn btn-success">TRANSFER</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div>
+                            <select id="SearchInputCustomerTwo" class="form-control">
+                            </select>
+                        </div>
+                        <div class="row">&nbsp;</div>
+                        <div id="PaperReceiptCustomertoCustomer" class="receipt">
+                            <div class="padding10" id="ReceiptNameCustomerOne"></div>
+                            <div class="padding10" id="ReceiptNameCustomerTwo"></div>
+                            <div class="padding10" id="ReceiptAmountCustomer"></div>
+                            <img class="moneyImg2" src="img/money.png" alt="Money">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="EmployeePage" id="EmployeePageAsk" data-page="EmployeePageAsk">
+                <h3>Messages from customers!</h3>
+                <div id="LblMessage"></div>
+            </section>
+
+            <section class="EmployeePage" id="EmployeePageStatistics" data-page="EmployeePageStatistics">
+
+                <h3>Customer statistics</h3>
+                <div class="bs-example">
+                    <h2>Rich</h2>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Bank Account</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Phone</th>
+                                <th>Cpr</th>
+                                <th>Gender</th>
+                                <th>$ Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody id="TableRowsRich">
+                        </tbody>
+                    </table>
+                    <h2>Middle</h2>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Bank Account</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Phone</th>
+                                <th>Cpr</th>
+                                <th>Gender</th>
+                                <th>$ Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody id="TableRowsMiddle">
+                        </tbody>
+                    </table>
+                    <h2>Poor</h2>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Bank Account</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Phone</th>
+                                <th>Cpr</th>
+                                <th>Gender</th>
+                                <th>$ Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody id="TableRowsPoor">
+                        </tbody>
+                    </table>
+                </div><!-- /example -->
+                <div id="chartContainer"></div>
+                <div class="bs-example">
+                    <h3>Gender</h3>
+
+                    <h5> - Male</h5>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Bank Account</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Phone</th>
+                                <th>Cpr</th>
+                                <th>Gender</th>
+                                <th>$ Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody id="maleCustomers">
+                        </tbody>
+                    </table>
+
+                    <h5> - Female</h5>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Bank Account</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Phone</th>
+                                <th>Cpr</th>
+                                <th>Gender</th>
+                                <th>$ Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody id="femaleCustomers">
+                        </tbody>
+                    </table>
+                </div>
+                <div id="chartContainerGender"></div>
+
+            </section> 
+            <!--END EMPLOYEE SECTION!---------------------------------------------------------->
+        </div>
+        <div id="footer" class="container">
+            <div class="navbar CustomHeight navbar-default navbar-fixed-bottom">
+                <div class="navbar-inner navbar-content-center">
+                    <a href="http://www.facebook.com" class="facebook"></a>
+                    <a href="http://www.Twitter.com" class="twitter"></a>
+                    <a href="http://www.linkedin.com" class="linkedin"></a>
+                    <a href="#" class="text-muted credit" data-toggle="modal" data-target=".bs-example-modal-sm">Terms and conditions</a>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title" id="mySmallModalLabel">Terms and conditions</h4>
+                    </div>
+                    <div class="modal-body">
+                        <strong>Vilkår for brug</strong><br>
+                        Læs venligst disse vilkår omhyggeligt. Brug af dette website og tilhørende undersites (’sitet’) samt alt materiale på sitet er kun tilladt på nedenstående vilkår.<br><br>
+                        Indholdet er formuleret i overensstemmelse med dansk lovgivning og er ikke nødvendigvis i overensstemmelse med lovgivningen i andre lande.<br><br>
+                        <strong>For kunder bosat i USA, Storbritannien, Nordirland eller andre lande</strong><br>
+                        Oplysninger og vurderinger på sitet er ikke beregnet på videregivelse til eller brug af personer i jurisdiktioner og lande, hvor sådan videregivelse eller brug ville være i strid med gældende lovgivning.<br><br>
+                        Oplysninger på sitet er således ikke henvendt til eller beregnet på ’US persons’ som defineret i United States Securities Act af 1933 med ændringer og United States Securities Exchange Act af 1934 med ændringer.<br><br>
+                        Oplysninger på sitet er alene beregnet på personer, som i kraft af deres erhverv beskæftiger sig med investering, og ikke på private investorer i Storbritannien og Nordirland.<br><br>
+                        <strong>Oplysninger på websitet og ansvarsbegrænsning</strong><br>
+                        Oplysninger på sitet er alene til orientering. Oplysningerne kan ikke opfattes som et tilbud eller opfordring til at give tilbud om salg eller udstedelse af køb af Danske Bank-koncernens produkter og ydelser.<br><br>
+                        Danske Bank-koncernen har efter bedste evne bestræbt sig på at sikre, at oplysningerne og funktionerne på sitet er fuldstændige og korrekte, men kan ikke garantere dette og påtager sig intet ansvar for fejl, stavefejl og udeladelser. Danske Bank-koncernen er heller ikke ansvarlig for hensigtsmæssigheden af oplysningerne og indholdet på sitet.<br><br>
+                        Oplysningerne på sitet er publiceret af Danske Bank-koncernen på baggrund af oplysninger modtaget fra kilder, der anses for troværdige, men oplysningerne er ikke uafhængigt bekræftet. <br><br>
+                        Oplysninger, beregninger, vurderinger og estimater angivet på sitet kan ikke betragtes som investeringsanbefalinger eller opfordring til at investere. De nævnte oplysninger mv. kan heller ikke betragtes som anbefalinger eller rådgivning af juridisk, regnskabsmæssig eller skattemæssig karakter i forbindelse med konkrete investeringer. Danske Bank-koncernen kan ikke holdes ansvarlig for tab forårsaget af kunders dispositioner - eller mangel på samme - på baggrund af ovennævnte oplysninger.<br><br>
+                        En kunde er altid selv ansvarlig for den økonomiske konsekvens af sine investeringer. Hverken afkastberegninger eller historiske børs- og investeringsdata er udtryk for nogen garanti for fremtidige resultater. <br><br>
+                        <strong>Kursinformation</strong><br>
+                        Kurser, satser, og beløbsangivelser, der publiceres på sitet, er alene til orientering og er indikative, medmindre andet er angivet. Sådanne kurser, satser og beløbsangivelser er ikke nødvendigvis de samme som ville gælde for nye transaktioner eller eksisterende positioner. Brugere skal altid kontrollere gældende kurser, satser og beløbsangivelser, før en transaktion gennemføres.<br><br>
+                        <strong>Oplysning om Danske Banks interesser</strong><br>
+                        Danske Bank-koncernen, herunder koncernens filialer, datterselskaber, divisioner og medarbejdere, må, i den udstrækning lovgivningen tillader det, betjene, handle med, have lange eller korte positioner i eller på anden måde have interesser i investeringer, herunder derivater, hos enhver udsteder omtalt på sitet. Danske Bank-koncernens analytikere må ikke investere i værdipapirer, der relaterer sig til deres eget analyseområde.<br><br>
+                        <strong>Links til andre sites</strong><br>
+                        Sitet giver adgang til andre sites i Danske Bank-koncernen, som er underlagt egne vilkår for brug. Disse vilkår findes på det enkelte site. Sitet kan også give adgang til tredjemands website via relevant links eller tilbyde eller præsentere produkter, serviceydelser og information fra tredjemand. Danske Bank-koncernen har ikke gennemgået og kan ikke gøres ansvarlig for indholdet af websites, der er ejet af andre end Danske Bank-koncernen, herunder produkter og serviceydelser udbudt af andre end Danske Bank-koncernen.<br><br>
+                        <strong>Website-sikkerhed</strong><br>
+                        Danske Bank-koncernen er af den opfattelse, at sitet ikke indeholder virus, malware eller andre fejl, der kan påvirke brugernes it-system, men det er på brugernes eget ansvar at besøge og anvende sitet. Danske Bank-koncernen påtager sig intet ansvar for tab som følge af brug af sitet. Danske Bank-koncernen påtager sig heller ikke noget ansvar for sitets tilgængelighed. <br><br>
+                        Hverken Danske Bank-koncernen eller dens ledelse eller ansatte påtager sig noget ansvar for tab, direkte eller indirekte, eller tab som følge af tilgængelighed eller brug af sitet, herunder nogen skade eller defekt på brugernes computere som følge af adgang til og brug af de it-systemer, der gør sitet tilgængeligt.<br><br>
+                        Data indtastet i forespørgselsformularer, herunder kontaktformularer fremsendt via sitet, er beskyttet af SSL-kryptering og kan ikke læses af tredjemand. Forespørgsler fremsendt via Danske Bank-koncernens netbankløsninger er beskyttet af den samme type SSL-kryptering, som beskytter netbanktransaktioner.<br><br>
+                        E-mails sendt via (det åbne) internet til Danske Bank-koncernen er muligvis ikke krypteret. Derfor anbefaler Danske Bank-koncernen, at man ikke sender personlige oplysninger via e-mail.<br><br>
+                        <strong>Ejendomsret og immaterielle rettigheder</strong><br>
+                        Danske Bank-koncernen er ophavsmand til materiale, der offentliggøres på sitet. Danske Bank-koncernen og dens enheder forbeholder sig ejendomsret, copyright, varemærkeret og enhver anden immaterialret til sitet samt produkter og serviceydelser nævnt på sitet, medmindre det er angivet, at sådanne rettigheder tilhører tredjemand. <br><br>
+                        Brugere af dette site må kun læse og udskrive ovennævnte indhold til eget privat brug. Brugere må ikke på anden måde kopiere, gemme, gengive, tilpasse, ændre, overføre, overdrage, bruge eller udnytte indholdet på sitet eller dele heraf uden forudgående skriftligt samtykke.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade Trans-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="containerCustom container">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h4 class="modal-title" id="mySmallModalLabel">Customer Transactions</h4>
+                        </div>
+                        <h5 class="black">Transaction Made by Employees</h5>
+                        <table class="table">
+                            <thead class="black">
+                                <tr>
+                                    <th>From</th>
+                                    <th>To</th>
+                                    <th>$ Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody id="TransactionHistory">
+                            </tbody>
+                        </table>
+                        <h5 class="black">Transaction Made by Customer</h5>
+                        <table class="table">
+                            <thead class="black">
+                                <tr>
+                                    <th>From</th>
+                                    <th>To</th>
+                                    <th>$ Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody id="TransactionHistoryCustomer">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-md">
+                <div class="modal-content">
+                    <div class="container containerCustom">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">Employee and Customer Logins</h4>
+                    </div>
+                    <h3 class="black">Employee Login</h3>
+                    <div>
+                        <table class="table">
+                            <thead class="black">
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Pass</th>
+                                </tr>
+                            </thead>
+                            <tbody id="EmployeeLoginModal">
+                            </tbody>
+                        </table>
+                    </div>
+                    <h3 class='black'>Customer Login</h3>
+                    <div>
+                        <table class="table">
+                            <thead class="black">
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Pass</th>
+                                </tr>
+                            </thead>
+                            <tbody id="CustomerLoginModal">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                    </div>
+            </div>
+        </div>
+
+        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <script src="js/main.js"></script>
+
+    </body>
+
+</html>

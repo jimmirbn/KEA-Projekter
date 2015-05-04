@@ -1,0 +1,81 @@
+.btn:focus, .btn:active:focus, .btn.active:focus{
+    outline: 0;
+}
+
+.btn{
+    /* display: block; */
+}
+a:hover{
+    cursor: pointer;
+}
+
+label{
+    display:block;
+}
+
+td{
+    text-align: left;
+}
+
+.loginForm{
+    position: relative;
+    top: 4px;
+}
+
+label.pull-left{
+    margin-right: 5px;
+}
+
+/*a.btn.btn-warning{
+    display: block; 
+    top: 5px;
+    position: relative;
+    float: left;
+    margin-right: 5px;
+}*/
+.subject:hover{
+    cursor:pointer;
+}
+/*a.btn.btn-warning.createUserBtn{
+    float: none;
+display: inline-block;
+top: 0;
+}*/
+.none{
+    display: none;
+}
+textarea#commentArea{
+    min-height: 150px;
+}
+/*.navbar-header{
+    max-width: 100%;
+width: 50%;
+}*/
+.modal-open, .modal-open .navbar-fixed-top {
+    margin-right: auto !important;
+    padding-right: 0!important;
+}
+
+body{
+    padding: 0;
+}
+
+.navbar{
+    position:relative;
+}
+
+.gadgy{
+    position: absolute;
+    width: 25px;
+    top: 4px;
+    left: 0;
+}
+
+@media (max-width: 768px){
+    .gadgy{
+        display: none;
+    }
+    .loginForm{
+        display: none;
+    }
+}

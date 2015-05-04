@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="da">
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+        <title>Gadgy - Forum about gadgets!</title>
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <!-- Latest compiled and minified CSS -->
+        <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/yeti/bootstrap.min.css" rel="stylesheet">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="styles/4-col-portfolio.css" rel="stylesheet">
+        <link rel="stylesheet" href="styles/style.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body class="index">
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <img class="gadgy" src="img/gadgy.png" alt="minilogo">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">Gadgy</a>
+
+
+                </div>
+                <!--Collect the nav links, forms, and other content for toggling--> 
+                <div class="collapse navbar-collapse pull-left" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li id="createUserLi">
+                            <a data-toggle="modal" data-target="#createUser">
+                                Create User
+                            </a>
+                        </li>
+                        <li id="adminButton">
+                        </li>
+                        <li id="userAccount">
+                        </li>
+                    </ul>
+                </div>
+                <!--/.navbar-collapse--> 
+                <div class="loginForm pull-right">
+                    <div id="loginformInner">
+                        <label class="pull-left"><input type="text" class="form-control" placeholder="Username" name="username" id="username" /></label>
+                        <label class="pull-left"><input type="password" class="form-control" placeholder="Password" name="password" id="password" /></label>
+                        <button type="button" id="loginBtn" class="btn btn-success"><span class="glyphicon glyphicon-log-in"></span></button>
+                    </div>
+                    <span class="text-success" id="userName"></span>
+                    <button id="logoutBtn" class="btn btn-success none">Log out</button>
+                </div>
+            </div>
+            <!-- /.container -->
+        </nav>
+        <div class="container text-center index">
+            <div class="row">
+                <div class="col-lg-12" style="margin-bottom: 75px;">
+                    <img style="width:200px;" src="img/logo.png" alt="gadgy logo">
+<!--                    <h1 class="page-header">Gadgy<br>
+-->                        <br><h4>Get your information</h4><!--
+                    </h1>-->
+                </div>
+            </div>
+            <!-- Projects Row -->
+            <div class="row">
+                <div id="categories"></div>
+                <!--                <div class="col-sm-6 col-md-3 portfolio-item">
+                                    <a href="camera.html">
+                                        <i class="fa fa-camera-retro fa-5x"></i>
+                                        <p>Camera</p>
+                                    </a>
+                                </div>
+                                <div class="col-sm-6 col-md-3 portfolio-item">
+                                    <a href="#">
+                                        <i class="fa fa-headphones fa-5x"></i>
+                                        <p>Headphones</p>
+                                    </a>
+                                </div>
+                                <div class="col-sm-6 col-md-3 portfolio-item">
+                                    <a href="#">
+                                        <i class="fa fa-mobile fa-5x"></i>
+                                        <p>Smart phones</p>
+                                    </a>
+                                </div>
+                                <div class="col-sm-6 col-md-3 portfolio-item">
+                                    <a href="#">
+                                        <i class="fa fa-laptop fa-5x"></i>
+                                        <p>Laptop</p>
+                                    </a>
+                                </div>-->
+            </div>
+            <!-- Footer -->
+            <footer>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p>Copyright &copy; Gadgy 2014</p>
+                    </div>
+                </div>
+                <!-- /.row -->
+            </footer>
+        </div>
+
+        <!-- /.row -->
+        <div class="modal fade" id="createUser">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title">Create User</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <!--                            <div class="form-group">
+                                                        <input placeholder="Firstname" class="form-control" type="text" name="firstname" id="firstnameUser">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input placeholder="Lastname" class="form-control" type="text" name="lastname" id="lastnameUser">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input placeholder="Username" class="form-control" type="text" name="username" id="usernameUser">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input placeholder="password" class="form-control" type="text" name="password" id="passwordUser">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input placeholder="Email" class="form-control" type="email" name="email" id="emailUser">
+                                                    </div>-->
+
+<!--                        <div class="form-group">
+                            <input name="image" id="image" type="file">
+                        </div>
+                        <input type="hidden" name="access" id="accessUser" value="5">-->
+                        <!--<button type="button" class="btn btn-success" id="createUserbtn">Create user</button>-->
+
+                        <form action="/ajax-upload" id="ajax-attachment-upload-form">
+                            <div class="form-group">
+                                <input placeholder="Firstname" class="form-control" type="text" name="firstname" id="firstnameUser">
+                            </div>
+                            <div class="form-group">
+                                <input placeholder="Lastname" class="form-control" type="text" name="lastname" id="lastnameUser">
+                            </div>
+                            <div class="form-group">
+                                <input placeholder="Username" class="form-control" type="text" name="username" id="usernameUser">
+                            </div>
+                            <div class="form-group">
+                                <input placeholder="password" class="form-control" type="text" name="password" id="passwordUser">
+                            </div>
+                            <div class="form-group">
+                                <input placeholder="Email" class="form-control" type="text" name="email" id="emailUser">
+                            </div>
+                            <input type="file" name="attachment" id="attachment" multiple /> 
+                            <input type="hidden" name="access" id="accessUser" value="5">
+                            <input type="submit" value="Upload" />
+                        </form>
+
+                        <ul id="file-listing"></ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+        <div class="modal fade" id="create">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title">WRONG!</h4>
+                    </div>
+                    <div class="modal-body">
+                        <h3 id="headline"></h3>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+        <div class="modal fade" id="successUser">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4></h4>
+                    </div>
+                    <div class="modal-body">
+                        User created
+                    </div>
+                    <div class="modal-footer">
+                        <button id="loginUser" type="button" class="btn btn-default">Close</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+        <div class="modal fade" id="errorUser">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4>Sorry</h4>
+                    </div>
+                    <div class="modal-body">
+                        Username already taken, please try another.
+                    </div>
+                    <div class="modal-footer">
+                        <button  type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+        <div class="modal fade" id="LoginUser">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4>Sorry</h4>
+                    </div>
+                    <div class="modal-body">
+                        Username or password incorrect
+                    </div>
+                    <div class="modal-footer">
+                        <button  type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+        <div class="modal fade" id="userAccountModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                        <h4 class="modal-title" id="myModalLabel2"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <center>
+                            <img id="userImg" src="" name="aboutme" width="140" height="140" border="0" class="img-circle">
+                            <h3 class="media-heading"></h3>
+                        </center>
+                        <hr>
+                        <center>
+                            <div class="text-left" id="userInfo"><strong>Info: </strong><br>
+
+
+                            </div>
+                            <br>
+                        </center>
+                    </div>
+                    <div class="modal-footer">
+                        <center>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-info" data-dismiss="modal" data-toggle="modal" data-target="#EditUser">Edit info</button>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="EditUser">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4>Edit user info</h4>
+                    </div>
+                    <div class="modal-body" id="userInfoModal">
+                        <div class="form-group">
+                            <label>Firstname</label><input class="form-control" type="text" id="editFirstname" placeholder="Firstname">
+                        </div>
+                        <div class="form-group">
+                            <label>Lastname</label><input class="form-control" type="text" id="editLastname" placeholder="Lastname">
+                        </div>
+                        <div class="form-group">
+                            <label>E-mail</label><input class="form-control" type="email" id="editEmail" placeholder="Email">
+                        </div>
+                        <button class="btn btn-success editUserBtn" type="button">Send</button>
+                    </div>
+                    <div class="modal-footer">
+                        <button  type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
